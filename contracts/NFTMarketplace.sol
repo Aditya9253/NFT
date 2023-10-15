@@ -7,6 +7,9 @@ import "@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.sol";
 import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
 
 contract NFTMarketplace is ERC721URIStorage {
+   
+
+
 
     using Counters for Counters.Counter;
     //_tokenIds variable has the most recent minted tokenId
@@ -180,3 +183,61 @@ contract NFTMarketplace is ERC721URIStorage {
     //In that case, tokens won't be listed by default but users can send a request to actually list a token
     //Currently NFTs are listed by default
 }
+
+
+//    using Counters for Counters.Counter;
+
+//    Counters.Counter private _tokenIds;
+
+//    address payable owner;
+//    constructor() ERC721("NFTMarketplace","NFTM"){
+//      owner=payable(msg.sender);
+//        }
+
+//     uint256 listPrice=0.01 ether;
+
+//     struct ListedToken{
+//         uint256 tokenId;
+//         address payable owner;
+//         address payable seller;
+//         uint256 price;
+//         bool currentlyListed;
+    
+//     }
+//     mapping(uint=>ListedToken) private idToListedToken;
+
+
+//     function updateListPrice(uint256 _listPrice) private {
+//         require(owner==msg.sender,"only owner is allowed to change the price");
+//         listPrice=_listPrice;
+//     }
+//     function getListPrice() public view  returns(uint){
+//         return listPrice;
+//     }
+
+//     function  getLatestidToListedToken() public view returns(address){
+//         return idToListedToken[current._tokenIds];
+//     }
+//     function getListedForTokenId(uint tokenId) public view returns(address){
+//         return idToListedToken[tokenId];
+    
+//     }
+//     function grtCurrenttoken() public returns(address){
+//         return _tokenIds.current();
+//     }
+
+//     function createToken(address memory tokenURI,uint price) public returns(uint) {
+//         require(msg.value==listPrice,"Sending amountis less than required amount");
+//         require(price>0,"price value is less than 0");
+
+//         _tokenIds.increment();
+//          uint256 newToken=_tokenIds.current();
+
+//         _safeMint(msg.sender,newTokenId());
+//         _setTokenURI(newTokenId,price);
+
+//         createListedToken(newToken,price);
+//         return newTokenId;
+        
+
+//     }
